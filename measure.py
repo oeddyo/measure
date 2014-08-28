@@ -52,7 +52,10 @@ class Measure:
     def F1(self):
         self.f1_array = []
         for (r, p) in zip(self.recall(), self.precision()):
-            self.f1_array.append(2.0*p*r/(p+r) )
+            if p+r == 0.0:
+                self.f1_array.append(-1.0)
+            else:
+                self.f1_array.append(2.0*p*r/(p+r) )
         return self.f1_array
 
     def __str__(self):
