@@ -6,7 +6,7 @@ import logging
 
 class testMeasure(unittest.TestCase):
     def setUp(self):
-        self.m = measure.Measure('prediction', 'label')
+        self.m = measure.Measure('./example/prediction', './example/label')
         self.log= logging.getLogger( "Debug info: " )
 
     def test_confusion(self):
